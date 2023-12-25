@@ -1,9 +1,15 @@
 # Disappear
 
+## About 
 - A DOS 4k game by [Larsen/TNG](https://demozoo.org/sceners/18881/)
 - Released at [Scenest 1996](https://demozoo.org/parties/677/)
 - [Download original release](disapp.zip)
-- This is the web release, in 2023 (with the permission of the original author)
+- This is the web version, released in 2023 (powered by [js-dos.com](https://js-dos.com/))
+- With the permission of the original author 
+
+## Play online
+
+[=== [Click here to play!](https://ern0.github.io/disapp/) ===]
 
 ## Instructions (translated)
 

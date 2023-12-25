@@ -15,7 +15,14 @@
 				height: 400px; 
 				margin: auto;
   				position: absolute;
-  				top: 0; left: 0; bottom: 0; right: 0;
+  				top: 0; left: 0; bottom: 0; right: 0;				
+			}
+			#side {
+				position: fixed;
+				bottom: 1%; left: 0;
+			}
+			#fs {
+				display: none;
 			}
 			a, a:link, a:visited {
 				text-decoration: none;
@@ -30,11 +37,14 @@
 	</head>
 
 	<body>
+		
 		<div id="dosbox"></div>
-		<br/>
-		<button onclick="dosbox.requestFullScreen();">Go fullscreen</button>
-		<br/>
-		&nbsp;<a href="https://github.com/ern0/disapp">repo</a>
+
+		<div id="side">
+			<button id="fs" onclick="dosbox.requestFullScreen();">Go fullscreen</button>
+			<br/>
+			&nbsp;<a href="https://github.com/ern0/disapp">info</a>
+		</div>
 
 		<script type="text/javascript" src="js-dos-api.js"></script>
 
@@ -42,7 +52,7 @@
 			var dosbox = new Dosbox({
 				id: "dosbox",
 				onload: function (dosbox) {
-					dosbox.run("./disapp.zip", "./disapp.exe");
+					dosbox.run("./disapp.zip", "./DISAPP.EXE");
 				},
 				onrun: function (dosbox, app) {
 					setTimeout(function() {

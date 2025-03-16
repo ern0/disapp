@@ -1,65 +1,36 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Disappear</title>
 
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>disappear</title>
-		<style type="text/css">
-			body {
-				margin: 0;
-				background-color: #000;
-			}
-			.dosbox-container { 
-				width: 640px; 
-				height: 400px; 
-				margin: auto;
-  				position: absolute;
-  				top: 0; left: 0; bottom: 0; right: 0;				
-			}
-			#side {
-				position: fixed;
-				bottom: 1%; left: 0;
-			}
-			#fs {
-				display: none;
-			}
-			a, a:link, a:visited {
-				text-decoration: none;
-				color: #666;
-				font-family: monospace;
-				font-size: 0.8em;
-			}	
-			a:hover {
-				text-decoration: underline;
-			}
-		</style>
-	</head>
+    <style>
+        html, body {
+            height: 100%;
+        }
 
-	<body>
-		
-		<div id="dosbox"></div>
+        #dos {
+            width: 100%;
+            height: 100%;
+            cursor:none;
+        }
+    </style>
 
-		<div id="side">
-			<button id="fs" onclick="dosbox.requestFullScreen();">Go fullscreen</button>
-			<br/>
-			&nbsp;<a href="https://github.com/ern0/disapp/tree/gh-pages">info</a>
-		</div>
+    <!-- js-dos style sheet -->
+    <link rel="stylesheet" href="js-dos.css">
 
-		<script type="text/javascript" src="js-dos-api.js"></script>
+    <!-- js-dos -->
+    <script src="js-dos.js"></script>
+</head>
+<body>
 
-		<script type="text/javascript">
-			var dosbox = new Dosbox({
-				id: "dosbox",
-				onload: function (dosbox) {
-					dosbox.run("./disapp.zip", "./DISAPP.EXE");
-				},
-				onrun: function (dosbox, app) {
-					setTimeout(function() {
-						document.getElementById("dosbox").style.cursor="none";
-					}, 2000);
-				}
-			});
-		</script>
-	</body>
+    <div id="dos" style="width: 100%; height: 100%"></div>
+
+    <script>
+        Dos(document.getElementById("dos"), {
+            url: "disapp.zip?DoNotCache=" + ((new Date()).getTime()),
+			autoStart: true,
+        });
+    </script>
+</body>
 </html>

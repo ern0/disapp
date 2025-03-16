@@ -6,6 +6,7 @@
 - [Download original release](disapp.zip)
 - This is the web version, released in 2023 (powered by [js-dos.com](https://js-dos.com/))
 - With the permission of the original author 
+- Updated JS-DOS in 2025
 
 ## Play online
 
